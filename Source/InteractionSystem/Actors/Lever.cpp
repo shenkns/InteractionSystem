@@ -25,12 +25,7 @@ bool ALever::Interact_Implementation()
 	
 	for(AActor* Actor : ConnectedActors)
 	{
-		if(InteractionComponent->CanInteract(Actor))
-		{
-			bSuccess &= IInteractionInterface::Execute_Interact(Actor);
-		}
-
-		bSuccess = false;
+		bSuccess &= InteractionComponent->Interact(Actor);
 	}
 
 	return bSuccess;
