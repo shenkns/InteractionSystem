@@ -19,6 +19,16 @@ ALever::ALever()
 	InteractionComponent = CreateDefaultSubobject<UInteractionComponent>(FName("InteractionComponent"));
 }
 
+void ALever::BeginPlay()
+{
+	Super::BeginPlay();
+
+	for(const AActor* Actor : ConnectedActors)
+	{
+		InteractionComponent->AddInteractableClass(Actor->GetClass());
+	}
+}
+
 bool ALever::Interact_Implementation()
 {
 	bool bSuccess = true;

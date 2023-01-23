@@ -13,29 +13,35 @@ UInteractionComponent::UInteractionComponent()
 
 bool UInteractionComponent::Interact(AActor* Target)
 {
-	if(!CanInteract(Target)) return false;
-	
-	/*if(GetOwner()->HasAuthority())
-	{
-		return IInteractionInterface::Execute_Interact(Target);
-	}
-
-	ServerInteract_Implementation(Target);
-	return true;*/
+	if(!CanInteractWithActor(Target)) return false;
 
 	return IInteractionInterface::Execute_Interact(Target);
 }
 
-bool UInteractionComponent::CanInteract(AActor* Target) const
+bool UInteractionComponent::CanInteractWithActor(AActor* Target) const
 {
-	if(!Target->GetClass()->ImplementsInterface(UInteractionInterface::StaticClass())) return false;
+	return CanInteractWithClass(Target->GetClass());
+}
+
+bool UInteractionComponent::CanInteractWithClass(TSubclassOf<AActor> Class) const
+{
+	if(!Class->ImplementsInterface(UInteractionInterface::StaticClass())) return false;
 
 	for(TSubclassOf<AActor> InteractableClass : InteractableClasses)
 	{
-		if(Target->GetClass() == InteractableClass || Target->GetClass()->IsChildOf(InteractableClass)) return true;
+		if(Class == InteractableClass || Class->IsChildOf(InteractableClass)) return true;
 	}
 
 	return false;
+}
+
+
+void UInteractionComponent::AddInteractableClass(TSubclassOf<AActor> Class)
+{
+	if(!CanInteractWithClass(Class))
+	{
+		InteractableClasses.AddUnique(Class);
+	}
 }
 
 void UInteractionComponent::BeginPlay()

@@ -26,10 +26,16 @@ public:
 	bool Interact(AActor* Target);
 
 	UFUNCTION(BlueprintPure, Category = "Interaction")
-	bool CanInteract(AActor* Target) const;
+	bool CanInteractWithActor(AActor* Target) const;
+
+	UFUNCTION(BlueprintPure, Category = "Interaction")
+	bool CanInteractWithClass(TSubclassOf<AActor> Class) const;
 
 	UFUNCTION(Server, Reliable)
 	void ServerInteract(AActor* Target);
+
+	UFUNCTION(BlueprintCallable, Category = "Interaction")
+	void AddInteractableClass(TSubclassOf<AActor> Class);
 
 protected:
 	

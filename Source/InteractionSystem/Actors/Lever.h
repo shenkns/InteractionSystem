@@ -36,5 +36,7 @@ protected:
 
 public:
 
+	virtual void BeginPlay() override;
+	
 	virtual bool Interact_Implementation() override;
 };
