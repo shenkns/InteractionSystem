@@ -3,13 +3,13 @@
 using UnrealBuildTool;
 using System.Collections.Generic;
 
-public class InteractionSystemTarget : TargetRules
+public class InteractionProjectTarget : TargetRules
 {
-	public InteractionSystemTarget(TargetInfo Target) : base(Target)
+	public InteractionProjectTarget(TargetInfo Target) : base(Target)
 	{
 		Type = TargetType.Game;
 		DefaultBuildSettings = BuildSettingsVersion.V2;
 
-		ExtraModuleNames.AddRange( new string[] { "InteractionSystem" } );
+		ExtraModuleNames.AddRange( new string[] { "InteractionProject" } );
 	}
 }

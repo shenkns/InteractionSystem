@@ -5,13 +5,19 @@
 	"Description": "",
 	"Modules": [
 		{
-			"Name": "InteractionSystem",
+			"Name": "InteractionProject",
 			"Type": "Runtime",
 			"LoadingPhase": "Default",
 			"AdditionalDependencies": [
 				"Engine",
 				"UMG"
 			]
+		}
+	],
+	"Plugins": [
+		{
+			"Name": "InteractionSystem",
+			"Enabled": true
 		}
 	],
 	"TargetPlatforms": [

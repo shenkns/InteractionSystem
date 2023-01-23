@@ -2,9 +2,9 @@
 
 using UnrealBuildTool;
 
-public class InteractionSystem : ModuleRules
+public class InteractionProject : ModuleRules
 {
-	public InteractionSystem(ReadOnlyTargetRules Target) : base(Target)
+	public InteractionProject(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
 	
@@ -19,19 +19,24 @@ public class InteractionSystem : ModuleRules
 			}
 		);
 
-		PrivateDependencyModuleNames.AddRange(new string[] {  });
+		PrivateDependencyModuleNames.AddRange(
+			new string[]
+			{
+				"InteractionSystem"
+			}
+		);
 
 		PrivateIncludePaths.AddRange(
 			new string[]
 			{
-				"InteractionSystem/"
+				"InteractionProject/"
 			}
 		);
 		
 		PublicIncludePaths.AddRange(
 			new string[]
 			{
-				"InteractionSystem/"
+				"InteractionProject/"
 			}
 		);
 	}

@@ -9,7 +9,7 @@
 class UPlayerNameWidget;
 
 UCLASS()
-class INTERACTIONSYSTEM_API UPlayerNameComponent : public UTextRenderComponent
+class INTERACTIONPROJECT_API UPlayerNameComponent : public UTextRenderComponent
 {
 	GENERATED_BODY()
 

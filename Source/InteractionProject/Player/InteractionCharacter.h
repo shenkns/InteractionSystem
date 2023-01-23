@@ -12,7 +12,7 @@ class UPlayerInteractionComponent;
 class UPlayerNameComponent;
 
 UCLASS()
-class INTERACTIONSYSTEM_API AInteractionCharacter : public ACharacter
+class INTERACTIONPROJECT_API AInteractionCharacter : public ACharacter
 {
 	GENERATED_BODY()
 

@@ -8,7 +8,7 @@
 class UPlayerNameComponent;
 
 UCLASS()
-class INTERACTIONSYSTEM_API UPlayerNameWidget : public UUserWidget
+class INTERACTIONPROJECT_API UPlayerNameWidget : public UUserWidget
 {
 	GENERATED_BODY()
 
