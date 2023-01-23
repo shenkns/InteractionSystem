@@ -31,9 +31,6 @@ protected:
 	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Components")
 	UPlayerInteractionComponent* PlayerInteractionComponent;
 
-	UPROPERTY(EditDefaultsOnly, BlueprintReadOnly, Category = "Components")
-	UPlayerNameComponent* PlayerNameComponent;
-
 public:	
 	
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;

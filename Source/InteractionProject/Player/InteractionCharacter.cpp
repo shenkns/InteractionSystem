@@ -4,7 +4,6 @@
 
 #include "Camera/CameraComponent.h"
 #include "Components/PlayerInteractionComponent.h"
-#include "Components/PlayerNameComponent.h"
 #include "GameFramework/CharacterMovementComponent.h"
 #include "GameFramework/SpringArmComponent.h"
 #include "Kismet/KismetMathLibrary.h"
@@ -24,9 +23,6 @@ AInteractionCharacter::AInteractionCharacter()
 	Camera->SetupAttachment(CameraBoom);
 
 	PlayerInteractionComponent = CreateDefaultSubobject<UPlayerInteractionComponent>(FName("InteractionComponent"));
-
-	PlayerNameComponent = CreateDefaultSubobject<UPlayerNameComponent>(FName("PlayerNameComponent"));
-	PlayerNameComponent->SetupAttachment(GetRootComponent());
 }
 
 void AInteractionCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputComponent)
