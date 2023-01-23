@@ -1,4 +1,4 @@
-// Fill out your copyright notice in the Description page of Project Settings.
+// Copyright shenkns Interaction System Developed With Unreal Engine. All Rights Reserved 2023.
 
 #include "Actors/Lever.h"
 
